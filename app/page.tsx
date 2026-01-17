@@ -1,7 +1,7 @@
 import Home from "./Home";
 import { totalCustomers } from "@/lib/queries";
 
-export default function Page() {
-  const total = totalCustomers[0].count;
+export default async function Page() {
+  const total = await totalCustomers();
   return <Home totalCustomers={total} />;
 }
